@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 
 // gateway post to local quarkus
 var backend_quarkus_host = 'localhost';
-var backend_quarkus_port = '8080';
+var backend_quarkus_port = '8081';
 
 if( process.env.COMPONENT_QUARKUS_BACKEND_HOST){
   backend_quarkus_host = process.env.COMPONENT_QUARKUS_BACKEND_HOST;
@@ -24,7 +24,7 @@ if( process.env.COMPONENT_QUARKUS_BACKEND_PORT){
 
 app.use('/quarkus', proxy(backend_quarkus_host + ':' + backend_quarkus_port));
 
-var port = '8080'
+var port = '8081'
 if( process.env.FRONTEND_PORT) {
   port = process.env.FRONTEND_PORT;
 }
